@@ -21,7 +21,7 @@ class NewTweet extends Component {
         const { text } = this.state;
         const { dispatch, id } = this.props;
 
-        dispatch(handleAddTweet(text, id ))
+        dispatch(handleAddTweet(text, id ));
 
         console.log(`New Tweet: ${text}`);
     }

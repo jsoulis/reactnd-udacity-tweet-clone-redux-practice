@@ -20,12 +20,13 @@ export default function tweets (state = {}, action) {
         case ADD_TWEET: 
 
             let replyingTo = {};
-            
+            const { tweet } = action;
+
             if(tweet.replyingTo !== null) {
                 replyingTo = {
                     [tweet.replyingTo]: {
                         ...state[tweet.replyingTo],
-                        replies: state[tweet.replyTo].replies.concat([tweet.id])
+                        replies: state[tweet.replyingTo].replies.concat([tweet.id])
                     }
                 }
             }
